@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deposit Evidence Checklist — free tool for UK landlords and letting agents</title>
+<meta name="description" content="A free, offline checklist for UK landlords and letting agents preparing a tenancy deposit claim. Built by AIIC-accredited inventory clerks in Birmingham.">
+<link rel="canonical" href="https://capitalcompletesolutions.github.io/">
+<meta property="og:title" content="Deposit Evidence Checklist">
+<meta property="og:description" content="Work through the evidence before you submit a tenancy deposit claim. Free, no sign-up, nothing leaves your browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://capitalcompletesolutions.github.io/">
+<style>
+:root{
+  --navy:#111827; --red:#9B1C28; --ink:#1F2937; --muted:#6B7280;
+  --line:#E5E7EB; --bg:#FFFFFF; --soft:#F9FAFB;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --navy:#F9FAFB; --red:#E05A6B; --ink:#E5E7EB; --muted:#9CA3AF;
+    --line:#374151; --bg:#0B1220; --soft:#111827;
+  }
+}
+:root[data-theme="dark"]{
+  --navy:#F9FAFB; --red:#E05A6B; --ink:#E5E7EB; --muted:#9CA3AF;
+  --line:#374151; --bg:#0B1220; --soft:#111827;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+.wrap{max-width:760px; margin:0 auto; padding:0 16px}
+header.top{border-top:6px solid var(--red); padding:36px 0 8px}
+.brand{font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--red); font-weight:700; margin:0 0 14px}
+h1{font-size:clamp(28px,5vw,40px); line-height:1.15; margin:0 0 12px; color:var(--navy); letter-spacing:-.02em}
+.lede{font-size:18px; color:var(--muted); margin:0 0 8px; max-width:56ch}
+.meta{font-size:14px; color:var(--muted); margin:18px 0 0}
+hr{border:0; border-top:1px solid var(--line); margin:34px 0}
+h2{font-size:22px; margin:34px 0 10px; color:var(--navy); letter-spacing:-.01em}
+h3{font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--red); margin:26px 0 8px}
+p{margin:0 0 14px}
+a{color:var(--red)}
+.panel{border:1px solid var(--line); border-radius:12px; padding:20px; background:var(--soft); margin:22px 0}
+.bar{height:6px; background:var(--line); border-radius:4px; overflow:hidden}
+.bar-fill{height:100%; width:0; background:var(--red); transition:width .18s ease}
+.count{font-size:14px; color:var(--muted); margin:8px 0 4px}
+label.item{
+  display:flex; gap:11px; align-items:flex-start; padding:10px 12px;
+  border:1px solid var(--line); border-radius:8px; margin-bottom:7px;
+  background:var(--bg); cursor:pointer;
+}
+label.item:hover{border-color:var(--red)}
+label.item input{margin:4px 0 0; accent-color:var(--red); flex:none; width:17px; height:17px}
+label.item.checked span{color:var(--muted); text-decoration:line-through}
+.tools{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+button{
+  padding:11px 18px; border-radius:8px; font-size:15px; font-weight:600;
+  cursor:pointer; border:1px solid transparent; font-family:inherit;
+}
+.primary{background:var(--red); color:#fff}
+.ghost{background:transparent; color:var(--ink); border-color:var(--line)}
+.said{font-size:14px; color:#15803D; margin:10px 0 0}
+ul.plain{padding-left:20px; margin:0 0 14px}
+ul.plain li{margin-bottom:7px}
+footer{border-top:1px solid var(--line); margin-top:44px; padding:26px 0 54px; font-size:14px; color:var(--muted)}
+footer strong{color:var(--ink)}
+.disc{font-style:italic; margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <p class="brand">Capital Complete Solutions · Birmingham</p>
+  <h1>Deposit Evidence Checklist</h1>
+  <p class="lede">Work through the evidence before you submit a tenancy deposit claim. Free, no sign-up, and nothing you tick leaves your browser.</p>
+  <p class="meta">Built by AIIC-accredited property inventory clerks. There is also a <a href="https://www.capital-cs.com" rel="noopener">Chrome extension version</a> in progress.</p>
+</header>
+
+<hr>
+
+<h2>Why this exists</h2>
+<p>When a tenancy deposit is disputed in the UK, the money sits with a scheme and an adjudicator decides who gets it. The starting position is that the deposit belongs to the tenant, and every deduction the landlord wants has to be individually proven.</p>
+<p>The process is documentary-only. Nobody visits the property, nobody rings to ask what you meant, and there is no second round. So claims fail on what is missing, not on what happened.</p>
+<p>This checklist is the list we work through ourselves.</p>
+
+<div class="panel">
+  <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+  <p class="count"><span id="done">0</span> of <span id="total">0</span> complete</p>
+  <div id="list"></div>
+  <div class="tools">
+    <button class="primary" id="copy">Copy as text</button>
+    <button class="ghost" id="reset">Reset</button>
+  </div>
+  <p class="said" id="said" hidden>Copied to clipboard.</p>
+</div>
+
+<h2>The three mistakes that cost the most</h2>
+<ul class="plain">
+  <li><strong>No usable baseline.</strong> A photo of damage proves the damage exists, not when it happened. Without a matching record from the start of the tenancy there is nothing to compare against.</li>
+  <li><strong>Reports that do not line up.</strong> Two thorough documents in different formats are worth less than two shorter ones that mirror each other. The adjudicator should be able to read across.</li>
+  <li><strong>Overreaching on one item.</strong> Adjudicators apportion for age and wear. One inflated figure makes them sceptical about everything else you submitted.</li>
+</ul>
+
+<h2>If you would rather not do it yourself</h2>
+<p>We produce photographic, time-stamped reports for landlords and letting agents across Birmingham, the West Midlands, Warwickshire, Staffordshire and Worcestershire:</p>
+<ul class="plain">
+  <li><a href="https://www.capital-cs.com/services/inventory-reports" rel="noopener">Inventory reports</a></li>
+  <li><a href="https://www.capital-cs.com/services/check-in-inspections" rel="noopener">Check-in inspections</a></li>
+  <li><a href="https://www.capital-cs.com/services/check-out-inspections" rel="noopener">Check-out inspections</a></li>
+  <li><a href="https://www.capital-cs.com/services/mid-term-inspections" rel="noopener">Mid-term inspections</a></li>
+  <li><a href="https://www.capital-cs.com/services/energy-performance-certificates" rel="noopener">Energy Performance Certificates</a></li>
+  <li><a href="https://www.capital-cs.com/services/legionella-risk-assessments" rel="noopener">Legionella risk assessments</a></li>
+</ul>
+<p><a href="https://www.capital-cs.com/booking" rel="noopener">Book an inspection</a> or call 0121 582 4070.</p>
+
+<footer>
+  <p><strong>Capital Complete Solutions</strong><br>
+  113 Victoria Road, Stechford, Birmingham B33 8AN<br>
+  0121 582 4070 · WhatsApp +44 7596 966748 · info@capital-cs.com<br>
+  <a href="https://www.capital-cs.com" rel="noopener">www.capital-cs.com</a></p>
+  <p>AIIC-accredited and fully insured. Established 2021.<br>
+  Monday to Friday 08:00–18:00 · Saturday 09:00–16:00 · Sunday closed</p>
+  <p class="disc">This checklist is general guidance for landlords and letting agents, not legal advice. For your specific case, check current GOV.UK guidance and your deposit scheme's own rules (TDS, DPS or MyDeposits), or speak to a qualified professional.</p>
+</footer>
+
+</div>
+
+<script>
+const GROUPS=[
+ {title:'The baseline',items:[
+  'Signed check-in report / schedule of condition exists',
+  'Check-in report describes condition, not just "good" or "fair"',
+  'Check-in photographs are dated and cover every claimed item',
+  'Tenant signed, or was given the chance to comment on, the check-in']},
+ {title:'The check-out',items:[
+  'Check-out report mirrors the check-in: same rooms, same order, same item names',
+  'Check-out photographs taken from the same angles as check-in',
+  'Every claimed item appears in both reports',
+  'Tenant was invited to the check-out, and attendance recorded']},
+ {title:'The claim',items:[
+  'Each deduction listed separately with its own evidence',
+  'Descriptions give location and measurement, not adjectives',
+  'Age and expected lifespan of each item accounted for',
+  'Fair wear and tear excluded from the claim',
+  'Costs supported by a quote or invoice at market rate']},
+ {title:'The bundle',items:[
+  'Evidence ordered per claim item, not per document',
+  'Irrelevant material left out',
+  'Deductions put to the tenant in writing, with their reply included',
+  'Undisputed part of the deposit already released']}
+];
+const KEY='cec-state-v1';
+const listEl=document.getElementById('list'), doneEl=document.getElementById('done'),
+      totalEl=document.getElementById('total'), barEl=document.getElementById('barFill'),
+      saidEl=document.getElementById('said');
+let state={};
+try{ state=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ state={}; }
+const k=(g,i)=>g+':'+i;
+const all=()=>GROUPS.flatMap((g,gi)=>g.items.map((t,i)=>({key:k(gi,i)})));
+function save(){ try{ localStorage.setItem(KEY,JSON.stringify(state)); }catch(e){} }
+function render(){
+  listEl.textContent='';
+  GROUPS.forEach((g,gi)=>{
+    const h=document.createElement('h3'); h.textContent=g.title; listEl.appendChild(h);
+    g.items.forEach((t,i)=>{
+      const key=k(gi,i);
+      const l=document.createElement('label'); l.className='item'+(state[key]?' checked':'');
+      const c=document.createElement('input'); c.type='checkbox'; c.checked=!!state[key];
+      c.addEventListener('change',()=>{ state[key]=c.checked; save(); render(); });
+      const s=document.createElement('span'); s.textContent=t;
+      l.append(c,s); listEl.appendChild(l);
+    });
+  });
+  const items=all(), done=items.filter(x=>state[x.key]).length;
+  doneEl.textContent=done; totalEl.textContent=items.length;
+  barEl.style.width=items.length?(done/items.length*100)+'%':'0%';
+}
+document.getElementById('copy').addEventListener('click',async()=>{
+  const out=['Deposit Evidence Checklist',''];
+  GROUPS.forEach((g,gi)=>{ out.push(g.title.toUpperCase());
+    g.items.forEach((t,i)=>out.push((state[k(gi,i)]?'[x] ':'[ ] ')+t)); out.push(''); });
+  out.push('Checklist by Capital Complete Solutions — www.capital-cs.com');
+  try{ await navigator.clipboard.writeText(out.join('\n'));
+    saidEl.hidden=false; setTimeout(()=>saidEl.hidden=true,2200);
+  }catch(e){ saidEl.textContent='Could not access the clipboard.'; saidEl.hidden=false; }
+});
+document.getElementById('reset').addEventListener('click',()=>{ state={}; save(); render(); });
+render();
+</script>
+</body>
+</html>
